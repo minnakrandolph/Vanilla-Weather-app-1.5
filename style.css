@@ -26,10 +26,7 @@ li {
     line-height: 19.2px;
     
 }
-small {
- display: inline;
 
-}
 .weather-app-wrapper {
     max-width: 600px;
     margin: 30px auto;
