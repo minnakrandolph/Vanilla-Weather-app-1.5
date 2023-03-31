@@ -27,7 +27,7 @@ li {
     
 }
 small {
- display: center;
+ display: inline;
 
 }
 .weather-app-wrapper {
