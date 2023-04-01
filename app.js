@@ -1,5 +1,5 @@
 function displayTemperature(response) {
-    console.log(response.data);
+    console.log(response.data.main.temp);
 }
 
 
