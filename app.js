@@ -10,3 +10,5 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=$
 
 console.log(apiUrl);
 axios.get(url).then(displayTemperature);
+
+debugger
