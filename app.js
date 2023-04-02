@@ -5,7 +5,8 @@ function displayTemperature(response) {
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
     cityElement.innerHTML = response.data.city;
     descriptionElement.innerHTML = response.data.condition.description;
-  }
+ }
+console.log(temperature);
   
   let apiKey = "2e3dto1e48d1a435aab54b3f664a20b0";
   let city = "New York";
