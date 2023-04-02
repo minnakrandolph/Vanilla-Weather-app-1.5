@@ -8,7 +8,7 @@ function displayTemperature(response) {
     cityElement.innerHTML = response.data.city;
     descriptionElement.innerHTML = response.data.condition.description;
     humidityElement.innerHTML = response.data.main.humidity;
-    windElement.innerHTML = response.data.wind.speed;
+    windElement.innerHTML = Math.round(response.data.wind.speed);
  }
 console.log(temperature);
   
