@@ -41,8 +41,9 @@ function search(city) {
 function handleSubmit(event) {
     city.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
-    console.log(cityInputElement.value);
+    search(cityInputElement.value);
 }
+
 search("New York");
   
   let form = document.querySelector("#search-form");
