@@ -27,7 +27,7 @@ function displayTemperature(response) {
     descriptionElement.innerHTML = response.data.condition.description;
     humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
-    dateElement.innerHTML = formatDate(response.data.new Date);
+    dateElement.innerHTML = formatDate(response.data.new.date);
 }
 console.log(temperature);
   
