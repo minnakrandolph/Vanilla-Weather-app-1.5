@@ -30,9 +30,18 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.new.date);
 }
 console.log(temperature);
+
+function search(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    console.log(cityInputElement);
+}
   
   let apiKey = "2e3dto1e48d1a435aab54b3f664a20b0";
   let city = "New York";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   
   axios.get(apiUrl).then(displayTemperature);
+
+  let form = document.querySelector("#search-form");
+  form.addEventListener("submit", search);
