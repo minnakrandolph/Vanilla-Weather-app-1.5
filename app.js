@@ -34,7 +34,7 @@ console.log(temperature);
 function search(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
-    console.log(cityInputElement);
+    console.log(cityInputElement.value);
 }
   
   let apiKey = "2e3dto1e48d1a435aab54b3f664a20b0";
