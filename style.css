@@ -73,6 +73,7 @@ li:first-letter {
 
 .active:hover {
     text-decoration: none;
+    cursor: default;
 }
 
 
