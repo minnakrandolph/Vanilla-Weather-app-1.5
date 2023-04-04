@@ -42,7 +42,7 @@ function handleSubmit(event) {
     search(cityInputElement.value);
 }
 function displayFahrenheitTemperature(event) {
-  //  event.preventDefault();
+    event.preventDefault();
    // let displayFahrenheitTemperature = (14 * 9) / 5 + 32;
     alert("link clicked");
 }
