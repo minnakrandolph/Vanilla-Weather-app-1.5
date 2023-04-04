@@ -1,7 +1,7 @@
 function formatDate(timestamp) {
-    let date = new Date(date);
+    let date = new Date(timestamp);
     let hours = date.getHours();
-    if(hours < 10)  {
+    if (hours < 10)  {
         hours = `0${hours}`;
     }
     let minutes = date.getMinutes();
@@ -13,8 +13,6 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
-
-
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
@@ -25,9 +23,9 @@ function displayTemperature(response) {
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
     cityElement.innerHTML = response.data.city;
     descriptionElement.innerHTML = response.data.condition.description;
-    humidityElement.innerHTML = response.data.main.humidity;
+    humidityElement.innerHTML = response.data.temperature.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
-    dateElement.innerHTML = formatDate(response.data.new.date);
+    dateElement.innerHTML = formatDate(response.data.time);
 }
 console.log(temperature);
 
@@ -43,16 +41,16 @@ function handleSubmit(event) {
     let cityInputElement = document.querySelector("#city-input");
     search(cityInputElement.value);
 }
-function displayFahrenheitTemperature(event) {
-    event.preventDefault();
-    let displayFahrenheitTemperature = (14 * 9) / 5 + 32;
-    alert(fahrenheitTemperature);
-}
+//function displayFahrenheitTemperature(event) {
+   // event.preventDefault();
+   // let displayFahrenheitTemperature = (14 * 9) / 5 + 32;
+   // alert(fahrenheitTemperature);
+//}
 
 search("New York");
   
   let form = document.querySelector("#search-form");
   form.addEventListener("submit", handleSubmit);
 
-  let fahrenheitLink = document.querySelector("#fahrenheit-link");
-  fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+ // let fahrenheitLink = document.querySelector("#fahrenheit-link");
+ // fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
