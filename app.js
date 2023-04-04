@@ -47,7 +47,7 @@ function displayFahrenheitTemperature(event) {
     alert("link clicked");
 }
 
-//search("New York");
+search("New York");
   
   let form = document.querySelector("#search-form");
   form.addEventListener("submit", handleSubmit);
