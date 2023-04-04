@@ -32,6 +32,10 @@ li:first-letter {
  text-decoration: capitalize;
 }
 
+small {
+    display: block;
+}
+
 
 .weather-app-wrapper {
     max-width: 600px;
