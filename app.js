@@ -43,8 +43,8 @@ function handleSubmit(event) {
 }
 function displayFahrenheitTemperature(event) {
     event.preventDefault();
-    let displayFahrenheitTemperature = (14 * 9) / 5 + 32;
-    alert(displayFahrenheitTemperature);
+   // let displayFahrenheitTemperature = (14 * 9) / 5 + 32;
+    alert("link clicked");
 }
 
 search("New York");
