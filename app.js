@@ -15,19 +15,20 @@ function formatDate(timestamp) {
 
 function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
+
+    let forcastHTML = "";
+    forecastElement.innerHTML = forecastHTML;
    
-    forecastElement.innerHTML = 
-         `<div class="row">
+    forecastElement.innerHTML = `
+         <div class="row">
           <div class="col-2">
-            <div class="weather-forecast-date">
-             Thur
-             </div>
+            <div class="weather-forecast-date">Thur</div>
           <img
             src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
             alt=""
             width="36"
             />
-            <div class="weather-forecast-temperature">
+            <div class="weather-forecast-temperatures">
             <span class="weather-forecast-temperature-max">
               18°
             </span>
@@ -36,7 +37,6 @@ function displayForecast() {
              </span>
             </div>
             </div>
-           </div>
            </div>
            `;  
         }
