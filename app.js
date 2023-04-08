@@ -15,9 +15,6 @@ function formatDate(timestamp) {
 
 function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
-
-    let forcastHTML = "";
-    forecastElement.innerHTML = "Forecast";
    
     forecastElement.innerHTML = `
          <div class="row">
