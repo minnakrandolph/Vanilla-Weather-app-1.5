@@ -40,7 +40,7 @@ function displayForecast() {
            `;  
            forecastHTML =  forecastHTML+`</div>`;
            forecastElement.innerHTML = forecastHTML;
-        }
+    )}
 
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
