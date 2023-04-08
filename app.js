@@ -74,4 +74,4 @@ function displayCelsiusTemperature(event) {
   celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
-  search("Brooklyn N.Y.");
+  search("Brooklyn");
