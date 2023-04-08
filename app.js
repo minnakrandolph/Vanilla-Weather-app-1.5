@@ -50,7 +50,7 @@ function displayTemperature(response) {
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
 
-
+    
     celsiusTemperature = response.data.temperature.current;
 
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
@@ -92,6 +92,8 @@ function displayCelsiusTemperature(event) {
 }
 
   let celsiusTemperature = null;
+
+  
   
   let form = document.querySelector("#search-form");
   form.addEventListener("submit", handleSubmit);
@@ -105,3 +107,4 @@ function displayCelsiusTemperature(event) {
 
   search("Brooklyn");
   displayForecast();
+  
