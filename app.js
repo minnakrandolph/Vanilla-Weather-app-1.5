@@ -57,6 +57,7 @@ function displayFahrenheitTemperature(event) {
 }
 function displayCelsiusTemperature(event) {
     event.preventDefault();
+    celsiusLink.classList.add("active");
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
@@ -73,4 +74,4 @@ function displayCelsiusTemperature(event) {
   celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
-  search("New York");
+  search("Brooklyn N.Y.");
