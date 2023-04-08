@@ -17,7 +17,7 @@ function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
 
     let forcastHTML = "";
-    forecastElement.innerHTML = forecastHTML;
+    forecastElement.innerHTML = "Forecast";
    
     forecastElement.innerHTML = `
          <div class="row">
