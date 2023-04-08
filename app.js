@@ -21,7 +21,7 @@ function displayForecast() {
          <div class="row">
           <div class="col-2">
             <div class="weather-forecast-date">
-            Thu
+            Fri
              </div>
           <img
             src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
