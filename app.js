@@ -43,6 +43,10 @@ function displayForecast() {
            forecastElement.innerHTML = forecastHTML;
     }
 
+    function getForecast(coordinates); {
+    console.log(coordinates);
+    }
+
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
@@ -62,6 +66,11 @@ function displayTemperature(response) {
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.time);
 }
+
+getForecast(response.data.coord);
+
+
+
 console.log(temperature);
 
 function search(city) {
