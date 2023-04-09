@@ -43,7 +43,7 @@ function displayForecast() {
            forecastElement.innerHTML = forecastHTML;
     }
 
-    function getForecast(coordinates); {
+    function getForecast(coordinates); 
     console.log(coordinates);
     }
 
