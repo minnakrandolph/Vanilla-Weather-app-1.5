@@ -45,6 +45,10 @@ function displayForecast() {
 
     function getForecast(coordinates) {
     console.log(coordinates);
+    let apiKey = "2e3dto1e48d1a435aab54b3f664a20b0";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?
+    lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    console.log(apiUrl);
     }
 
 function displayTemperature(response) {
@@ -67,7 +71,7 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.time);
 }
 
-getForecast(response.data.coord);
+getForecast(response.data.coordinates);
 
 
 
@@ -104,8 +108,6 @@ function displayCelsiusTemperature(event) {
 
   let celsiusTemperature = null;
 
-  
-  
   let form = document.querySelector("#search-form");
   form.addEventListener("submit", handleSubmit);
 
