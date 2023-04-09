@@ -71,7 +71,7 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.time);
 }
 
-getForecast(response.data.coordinates);
+getForecast(response.data.coord);
 
 
 
