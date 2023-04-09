@@ -52,7 +52,7 @@ function displayForecast() {
     axios.get(apiUrl);
     }
 
-    getForecast(response.data.coord);
+    getForecast(response.data.coordinates);
 
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
