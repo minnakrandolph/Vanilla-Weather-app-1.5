@@ -37,6 +37,10 @@ footer {
     display: center;
 }
 
+.container {
+    color: bisque;
+}
+
 
 .weather-app-wrapper {
     max-width: 600px;
