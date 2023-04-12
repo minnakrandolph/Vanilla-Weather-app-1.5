@@ -1,4 +1,5 @@
-function formatDate(timestamp) {
+
+    function formatDate(timestamp) {
     let date = new Date(timestamp);
     let hours = date.getHours();
     if (hours < 10)  {
@@ -53,7 +54,7 @@ function displayForecast(response) {
     axios.get(apiUrl).then(displayForecast);
     }
 
-    
+
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
@@ -78,8 +79,7 @@ console.log(temperature);
 
 function search(city) {
     let apiKey = "fbef01f4et1b02o0d25c27210a43ef3f";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?
-    query=${city}&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     
     axios.get(apiUrl).then(displayTemperature);
   }
@@ -101,7 +101,6 @@ function displayFahrenheitTemperature(event) {
 }
 function displayCelsiusTemperature(event) {
     event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
     celsiusLink.classList.add("active");
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
@@ -120,5 +119,3 @@ function displayCelsiusTemperature(event) {
 
 
   search("Brooklyn");
-  
-  
