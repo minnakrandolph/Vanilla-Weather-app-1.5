@@ -1,5 +1,4 @@
-
-    function formatDate(timestamp) {
+function formatDate(timestamp) {
     let date = new Date(timestamp);
     let hours = date.getHours();
     if (hours < 10)  {
@@ -22,11 +21,14 @@ function displayForecast(response) {
     let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tues"];
     days.forEach(function(day) {
     forecastHTML = forecastHTML + 
-    ` 
-        <div class="col-2">
+      `
+          <div class="col-2">
             <div class="weather-forecast-date">${day}</div>
           <img
-            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"alt=""width="36"/>
+            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+            alt=""
+            width="36"
+            />
             <div class="weather-forecast-temperatures">
             <span class="weather-forecast-temperature-max">
               18°
@@ -45,7 +47,8 @@ function displayForecast(response) {
     function getForecast(coordinates) {
     console.log(coordinates);
     let apiKey = "aa09763d916df0424c840d55bfc2d2c9";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?
+    lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
     console.log(apiUrl);
     axios.get(apiUrl).then(displayForecast);
     }
@@ -115,3 +118,4 @@ function displayCelsiusTemperature(event) {
 
 
   search("Brooklyn");
+  
