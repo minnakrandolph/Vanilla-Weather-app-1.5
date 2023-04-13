@@ -73,7 +73,7 @@ function displayTemperature(response) {
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.time);
 
-    getForecast(response.data.coordinates);
+    getForecast(response.data.coord);
 }
 
 console.log(temperature);
