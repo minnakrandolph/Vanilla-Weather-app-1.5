@@ -72,6 +72,8 @@ function displayTemperature(response) {
     humidityElement.innerHTML = response.data.temperature.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.time);
+
+    getForecast(response.data.coordinates);
 }
 
 console.log(temperature);
