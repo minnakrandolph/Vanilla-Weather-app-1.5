@@ -26,10 +26,7 @@ function displayForecast(response) {
           `<div class="col-2">
             <div class="weather-forecast-date">${day}</div>
           <img
-            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-            alt=""
-            width="36"
-            />
+            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"alt=""width="36"/>
             <div class="weather-forecast-temperatures">
             <span class="weather-forecast-temperature-max">
               18°
