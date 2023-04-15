@@ -8,8 +8,6 @@ function formatDate(timestamp) {
     if(minutes < 10)  {
         minutes = `0${minutes}`;
     }
-    
-
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let day = days[date.getDay()];
     return `${day}${hours}:${minutes}`;
@@ -19,9 +17,10 @@ function displayForecast(response) {
     console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
 
-    let days = ["Thu", "Fri", "Sat", "Sun"];
+    
    
     let forecastHTML = `<div class="row">`;
+    let days = ["Thu", "Fri", "Sat", "Sun"];
     forecastElement.forEach(function (day) {
     forecastHTML = forecastHTML + 
       `
@@ -53,8 +52,7 @@ function displayForecast(response) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${apiKey}&units=metric`;
     console.log(apiUrl);
     axios.get(apiUrl).then(displayForecast);
-    }
-
+}
 
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
@@ -74,7 +72,6 @@ function displayTemperature(response) {
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.time);
     
-
     getForecast(response.data.coordinates);
 }
 
@@ -124,3 +121,4 @@ function displayCelsiusTemperature(event) {
 
 
   search("Brooklyn");
+
