@@ -21,7 +21,7 @@ function displayForecast(response) {
     let forecastElement = document.querySelector("#forecast");
    
     let forecastHTML = `<div class="row">`;
-    forecastElement.forEach(function (forecastDay) {}
+    forecastElement.forEach(function (forecastDay) {
     
     days.forEach(function(day) {
     forecastHTML = forecastHTML + 
@@ -29,7 +29,7 @@ function displayForecast(response) {
           <div class="col-2">
             <div class="weather-forecast-date">${forcastDay.dt}</div>
           <img
-            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forcast.weather[0].icon}.png"
+            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forcastDay.weather[0].icon}.png"
             alt=""
             width="36"
             />
