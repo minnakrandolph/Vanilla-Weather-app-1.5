@@ -1,34 +1,32 @@
 function formatDate(timestamp) {
-    let now = new Date(timestamp);
-    let hours = now.getHours();
+    let date = new Date(timestamp);
+    let hours = date.getHours();
     if (hours < 10)  {
         hours = `0${hours}`;
     }
-    let minutes = now.getMinutes();
+    let minutes = date.getMinutes();
     if(minutes < 10)  {
         minutes = `0${minutes}`;
     }
-    let year = now.getFullYear();
+    
 
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let day = days[now.getDay()];
+    let day = days[date.getDay()];
     return `${day}${hours}:${minutes}`;
 }
 
 function displayForecast(response) {
     console.log(response.data.daily);
-
     let forecastElement = document.querySelector("#forecast");
+
+    let days = ["Thu", "Fri", "Sat", "Sun"];
    
     let forecastHTML = `<div class="row">`;
-    forecastElement.forEach(function (forecastDay) {
-
-    
-    days.forEach(function(day) {
+    forecastElement.forEach(function (day) {
     forecastHTML = forecastHTML + 
       `
           <div class="col-2">
-            <div class="weather-forecast-date">${forcastDay.dt}</div>
+            <div class="weather-forecast-date">${day}</div>
           <img
             src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forcastDay.weather[0].icon}.png"
             alt=""
@@ -43,7 +41,7 @@ function displayForecast(response) {
              </span>
             </div>
           </div>
-           `;  
+    `;  
     });
            forecastHTML =  forecastHTML+`</div>`;
            forecastElement.innerHTML = forecastHTML;
@@ -67,7 +65,6 @@ function displayTemperature(response) {
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
 
-    
     celsiusTemperature = response.data.temperature.current;
 
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
@@ -76,6 +73,7 @@ function displayTemperature(response) {
     humidityElement.innerHTML = response.data.temperature.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.time);
+    
 
     getForecast(response.data.coordinates);
 }
@@ -94,6 +92,7 @@ function handleSubmit(event) {
     let cityInputElement = document.querySelector("#city-input");
     search(cityInputElement.value);
 }
+
 function displayFahrenheitTemperature(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
@@ -104,6 +103,7 @@ function displayFahrenheitTemperature(event) {
     //alert(fahrenheitTemperature);
     temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+
 function displayCelsiusTemperature(event) {
     event.preventDefault();
     celsiusLink.classList.add("active");
@@ -124,4 +124,3 @@ function displayCelsiusTemperature(event) {
 
 
   search("Brooklyn");
-  
