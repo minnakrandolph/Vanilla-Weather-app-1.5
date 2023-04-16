@@ -13,17 +13,20 @@ function formatDate(timestamp) {
     return `${day}${hours}:${minutes}`;
 }
 function displayForecast(response) {
-    console.log(response.data.daily);
+    let forecast = response.data.daily;
+
     let forecastElement = document.querySelector("#forecast");
+
     let forecastHTML = `<div class="row">`;
-    let days = ["Thu", "Fri", "Sat", "Sun"];
-    days.forEach(function (day) {
-        forecastHTML = forecastHTML + 
+    //let days = ["Thu", "Fri", "Sat", "Sun"];
+    forecast.forEach(function (forecastDay) {
+        forecastHTML = 
+        forecastHTML + 
           `
               <div class="col-2">
-                <div class="weather-forecast-date">${day}</div>
+                <div class="weather-forecast-date">${forecastDay.dt}</div>
               <img
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastElement.day.weather[0].icon}.png"
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.weather[0].icon}.png"
                 alt=""
                 width="36"
                 />
@@ -42,37 +45,6 @@ function displayForecast(response) {
 //forecastHTML =  forecastHTML+`</div>`;
 //forecastElement.innerHTML = forecastHTML;
 
-/*
-function displayForecast(response) {
-    console.log(response.data.daily);
-    let forecastElement = document.querySelector("#forecast");
-
-    let forecastHTML = `<div class="row">`;
-    let days = ["Thu", "Fri", "Sat", "Sun"];
-    forecastElement.forEach(function (days) {
-    forecastHTML = forecastHTML + 
-      `
-          <div class="col-2">
-            <div class="weather-forecast-date">${days}</div>
-          <img
-            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forcastDay.weather[0].icon}.png"
-            alt=""
-            width="36"
-            />
-            <div class="weather-forecast-temperatures">
-            <span class="weather-forecast-temperature-max">
-              ${forecastDay.temp.max}°
-            </span>
-            <span class="weather-forecast-temperature-min">
-             ${forecastDay.temp.min}°
-             </span>
-            </div>
-          </div>
-    `; 
-    });
-           forecastHTML =  forecastHTML+`</div>`;
-           forecastElement.innerHTML = forecastHTML;
- */   
 
 function getForecast(coordinates) {
     console.log(coordinates);
