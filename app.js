@@ -40,10 +40,10 @@ function displayForecast(response) {
              </span>
             </div>
           </div>
-    ` 
+    `; 
     });
-           forecastHTML =  forecastHTML+`</div>`;
-           forecastElement.innerHTML = forecastHTML;
+          // forecastHTML =  forecastHTML+`</div>`;
+           //forecastElement.innerHTML = forecastHTML;
     
 
     function getForecast(coordinates) {
@@ -119,4 +119,4 @@ function displayCelsiusTemperature(event) {
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-//search("Brooklyn");
+search("Brooklyn");
