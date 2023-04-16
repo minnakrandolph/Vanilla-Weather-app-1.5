@@ -119,6 +119,4 @@ function displayCelsiusTemperature(event) {
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-
-  search("Brooklyn");
-
+//search("Brooklyn");
