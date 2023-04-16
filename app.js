@@ -12,20 +12,46 @@ function formatDate(timestamp) {
     let day = days[date.getDay()];
     return `${day}${hours}:${minutes}`;
 }
+function displayForecast(response) {
+    console.log(response.data.daily);
+    let forecastElement = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
+    let days = ["Thu", "Fri", "Sat", "Sun"];
+    forecastElement.forEach(function (days) {
+        forecastHTML = forecastHTML + 
+          `
+              <div class="col-2">
+                <div class="weather-forecast-date">${days}</div>
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forcastDay.weather[0].icon}.png"
+                alt=""
+                width="36"
+                />
+                <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-max">
+                  ${forecastDay.temp.max}°
+                </span>
+                <span class="weather-forecast-temperature-min">
+                 ${forecastDay.temp.min}°
+                 </span>
+                </div>
+              </div>
+        `; 
+        });
+}
 
+/*
 function displayForecast(response) {
     console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
 
-    
-   
     let forecastHTML = `<div class="row">`;
     let days = ["Thu", "Fri", "Sat", "Sun"];
-    forecastElement.forEach(function (day) {
+    forecastElement.forEach(function (days) {
     forecastHTML = forecastHTML + 
       `
           <div class="col-2">
-            <div class="weather-forecast-date">${day}</div>
+            <div class="weather-forecast-date">${days}</div>
           <img
             src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forcastDay.weather[0].icon}.png"
             alt=""
@@ -42,17 +68,18 @@ function displayForecast(response) {
           </div>
     `; 
     });
-          // forecastHTML =  forecastHTML+`</div>`;
-           //forecastElement.innerHTML = forecastHTML;
-    
+           forecastHTML =  forecastHTML+`</div>`;
+           forecastElement.innerHTML = forecastHTML;
+ */   
 
-    function getForecast(coordinates) {
+function getForecast(coordinates) {
     console.log(coordinates);
     let apiKey = "aa09763d916df0424c840d55bfc2d2c9";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${apiKey}&units=metric`;
     console.log(apiUrl);
     axios.get(apiUrl).then(displayForecast);
 }
+
 
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
@@ -84,11 +111,13 @@ function search(city) {
     axios.get(apiUrl).then(displayTemperature);
   }
 
+
 function handleSubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
     search(cityInputElement.value);
 }
+
 
 function displayFahrenheitTemperature(event) {
     event.preventDefault();
@@ -108,15 +137,15 @@ function displayCelsiusTemperature(event) {
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-  let celsiusTemperature = null;
+let celsiusTemperature = null;
 
-  let form = document.querySelector("#search-form");
-  form.addEventListener("submit", handleSubmit);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
-  let fahrenheitLink = document.querySelector("#fahrenheit-link");
-  fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-  let celsiusLink = document.querySelector("#celsius-link");
-  celsiusLink.addEventListener("click", displayCelsiusTemperature);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Brooklyn");
