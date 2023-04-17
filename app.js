@@ -36,7 +36,6 @@ function displayForecast(response) {
           `
               <div class="col-2">
                 <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-                ${index}
               <img
                 src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.weather[0].icon}.png"
                 alt=""
