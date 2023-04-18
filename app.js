@@ -35,8 +35,8 @@ function displayForecast(response) {
         forecastHTML + 
           `
               <div class="col-2">
-                <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.weather[0].icon},
+                <div class="weather-forecast-date">${formatDay(forecastDay.time)}</div>
+                <img src=${forecastDay.condition.icon_url}
                 "alt="
                 "width="42"
                 />
@@ -49,7 +49,7 @@ function displayForecast(response) {
                  </span>
                 </div>
               </div>
-        `; 
+            `; 
           }
         });
 
