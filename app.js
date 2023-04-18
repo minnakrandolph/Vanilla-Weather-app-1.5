@@ -28,7 +28,7 @@ function displayForecast(response) {
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="row">`;
-    //let days = ["Thu", "Fri", "Sat", "Sun"];
+    //let days = ["Thu", "Fri", "Sat", "Sun"]; i have this in the formatDay function
     forecast.forEach(function (forecastDay, index) {
         if (index < 6) {
         forecastHTML = 
