@@ -61,8 +61,10 @@ forecastElement.innerHTML = forecastHTML;
 
 function getForecast(coordinates) {
     console.log(coordinates);
-    let apiKey = "aa09763d916df0424c840d55bfc2d2c9";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${apiKey}&units=metric`;
+    //let apiKey = "aa09763d916df0424c840d55bfc2d2c9";
+    let apiKey = "2e3dto1e48d1a435aab54b3f664a20b0";
+    //let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
     console.log(apiUrl);
     axios.get(apiUrl).then(displayForecast);
 }
@@ -76,6 +78,8 @@ function displayTemperature(response) {
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", `${response.data.condition.icon_url}`);
+    iconElement.setAttribute("alt", response.data.condition.description);
 
     celsiusTemperature = response.data.temperature.current;
 
