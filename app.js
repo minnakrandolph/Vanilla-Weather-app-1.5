@@ -80,9 +80,9 @@ function displayTemperature(response) {
     iconElement.setAttribute("src", `${response.data.condition.icon_url}`);
     iconElement.setAttribute("alt", response.data.condition.description);
 
-    celsiusTemperature = response.data.temperature.current;
+    //celsiusTemperature = response.data.temperature.current;
 
-    temperatureElement.innerHTML = Math.round(celsiusTemperature);
+    //temperatureElement.innerHTML = Math.round(celsiusTemperature);
     cityElement.innerHTML = response.data.city;
     descriptionElement.innerHTML = response.data.condition.description;
     humidityElement.innerHTML = response.data.temperature.humidity;
