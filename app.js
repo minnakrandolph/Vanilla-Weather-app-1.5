@@ -42,7 +42,7 @@ function displayForecast(response) {
                 />
               <div class="weather-forecast-temperatures">
               <span class="weather-forecast-temperature-max">
-                  ${Math.ceil(forecastDay.temperature.maximum)}°
+                  ${Math.round(forecastDay.temperature.maximum)}°
                 </span>
                 <span class="weather-forecast-temperature-min">
                  ${Math.floor(forecastDay.temperature.minimum)}°
