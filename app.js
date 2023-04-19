@@ -113,21 +113,21 @@ function displayFahrenheitTemperature(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
     //remove the active class for celsius link
-    celsiusLink.classList.remove("active");
+    //celsiusLink.classList.remove("active");
     fahrenheitLink.classList.add("active");
     let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
     //alert(fahrenheitTemperature);
     temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-function displayCelsiusTemperature(event) {
-    event.preventDefault();
-    celsiusLink.classList.add("active");
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
+//function displayCelsiusTemperature(event) {
+   // event.preventDefault();
+   // celsiusLink.classList.add("active");
+    //let temperatureElement = document.querySelector("#temperature");
+   // temperatureElement.innerHTML = Math.round(celsiusTemperature);
+//}
 
-let celsiusTemperature = null;
+//let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
@@ -135,7 +135,7 @@ form.addEventListener("submit", handleSubmit);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
+//let celsiusLink = document.querySelector("#celsius-link");
+//celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Brooklyn");
