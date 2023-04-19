@@ -8,6 +8,7 @@ function formatDate(timestamp) {
     if(minutes < 10)  {
         minutes = `0${minutes}`;
     }
+
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let day = days[date.getDay()];
     return `${day}${hours}:${minutes}`;
@@ -64,7 +65,7 @@ function getForecast(coordinates) {
     let apiKey = "fbef01f4et1b02o0d25c27210a43ef3f";
     //let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${apiKey}&units=metric`;
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
-    console.log(apiUrl);
+    //console.log(apiUrl);
     axios.get(apiUrl).then(displayForecast);
 }
 
@@ -92,7 +93,7 @@ function displayTemperature(response) {
     getForecast(response.data.coordinates);
 }
 
-console.log(temperature);
+//console.log(temperature);
 
 function search(city) {
     let apiKey = "fbef01f4et1b02o0d25c27210a43ef3f";
@@ -116,7 +117,7 @@ function displayFahrenheitTemperature(event) {
     celsiusLink.classList.remove("active");
     fahrenheitLink.classList.add("active");
     let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-    alert(fahrenheitTemperature);
+    //alert(fahrenheitTemperature);
     temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
