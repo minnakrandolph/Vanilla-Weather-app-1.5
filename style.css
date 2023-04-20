@@ -33,9 +33,9 @@ li:first-letter {
  text-decoration: capitalize;
 }
 
-footer {
-    text-align: center;
-    display: center;
+small {
+    justify-content: center;
+    
 }
 
 weather-app-wrapper {
