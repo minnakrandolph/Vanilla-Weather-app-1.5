@@ -33,10 +33,6 @@ li:first-letter {
  text-decoration: capitalize;
 }
 
-small {
-    justify-content: center;
-    
-}
 
 weather-app-wrapper {
     color: bisque;
